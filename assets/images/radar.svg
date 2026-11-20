@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="52%" r="65%"><stop offset="0" stop-color="#0b3a3d"/><stop offset="1" stop-color="#050a12"/></radialGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#35f2a0" stop-opacity="0"/><stop offset="1" stop-color="#35f2a0" stop-opacity=".55"/></linearGradient>
+  </defs>
+  <rect width="900" height="506" fill="url(#bg)"/>
+  <g stroke="#22d3ee" stroke-opacity=".12"><path d="M0 63H900M0 126H900M0 189H900M0 252H900M0 315H900M0 378H900M0 441H900M112 0V506M225 0V506M337 0V506M450 0V506M562 0V506M675 0V506M787 0V506"/></g>
+  <g fill="none" stroke="#35f2a0" stroke-opacity=".6">
+    <circle cx="450" cy="253" r="80"/><circle cx="450" cy="253" r="160"/><circle cx="450" cy="253" r="240"/>
+    <path d="M450 10V496M207 253H693" stroke-opacity=".35"/>
+  </g>
+  <g transform="translate(450 253)">
+    <path d="M0 0L240 0A240 240 0 0 0 208 -120Z" fill="url(#sweep)">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g fill="#ff3d8b"><circle cx="610" cy="130" r="7"/><circle cx="330" cy="330" r="5" opacity=".7"/></g>
+  <circle cx="610" cy="130" r="16" fill="none" stroke="#ff3d8b"><animate attributeName="r" values="8;26" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite"/></circle>
+  <g font-family="monospace" font-size="16" fill="#35f2a0"><text x="36" y="56">STRIKESCANX // RADAR</text><text x="36" y="470" fill="#8fa6c4" font-size="13">ULTRASONIC SWEEP · SERVO SCAN · PROTOTYPE</text></g>
+</svg>

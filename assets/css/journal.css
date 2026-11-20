@@ -1,0 +1,134 @@
+/* ==========================================================================
+   JOURNAL — cool theme
+   Ice and violet neon, a synthwave horizon, calm reading typography.
+   Sections: backdrop · hero scene · post list · article page
+   ========================================================================== */
+
+/* ---------- Backdrop: deep indigo wash ---------- */
+body[data-theme="cool"] {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 85% -10%, rgba(167, 139, 250, 0.22), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 0% 30%, rgba(127, 231, 255, 0.09), transparent 70%);
+  background-repeat: no-repeat;
+}
+
+/* ---------- Hero ---------- */
+.journal-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding-block: clamp(3rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem);
+}
+.journal-hero h1 {
+  font-size: var(--step-4);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-block: 1rem 1.5rem;
+  background: linear-gradient(100deg, var(--text) 30%, var(--accent) 70%, var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.journal-hero__lead { max-width: 44ch; color: var(--text-dim); font-size: var(--step-1); line-height: 1.6; }
+
+/* ---------- Synthwave scene ---------- */
+.scene {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(to bottom, #0b0d2b 0%, #1b1450 55%, #3a1b6b 100%);
+  box-shadow: 0 30px 80px -40px rgba(167, 139, 250, 0.7);
+}
+
+/* Sun: gradient disc sliced by horizontal bars */
+.scene__sun {
+  position: absolute;
+  left: 50%;
+  bottom: 33%;
+  width: 36%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: linear-gradient(to bottom, var(--accent) 0%, var(--accent-2) 48%, var(--accent-3) 100%);
+  box-shadow: 0 0 80px 10px rgba(255, 122, 217, 0.35);
+  -webkit-mask-image: repeating-linear-gradient(to bottom, #000 0 9%, transparent 9% 11%);
+  mask-image: repeating-linear-gradient(to bottom, #000 0 9%, transparent 9% 11%);
+  animation: sun-drift 9s ease-in-out infinite alternate;
+}
+@keyframes sun-drift { to { transform: translateX(-50%) translateY(-3%); } }
+
+.scene__skyline { position: absolute; left: 0; right: 0; bottom: 34%; width: 100%; height: 14%; fill: #0a0b25; }
+
+/* Floor: perspective grid scrolling toward the viewer */
+.scene__floor {
+  position: absolute;
+  inset: 66% -50% -60%;
+  background:
+    linear-gradient(rgba(127, 231, 255, 0.55) 1px, transparent 1px) 0 0 / 100% 36px,
+    linear-gradient(90deg, rgba(127, 231, 255, 0.55) 1px, transparent 1px) 0 0 / 60px 100%,
+    #0a0b25;
+  transform: perspective(260px) rotateX(62deg);
+  transform-origin: top center;
+  animation: floor-scroll 1.6s linear infinite;
+}
+.scene::after { /* soft horizon glow */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 34%;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 24px 4px var(--accent);
+}
+@keyframes floor-scroll { to { background-position: 0 36px, 0 0, 0 0; } }
+
+/* ---------- Post list ---------- */
+.journal-list { border-top: 1px solid var(--line); }
+.post-row { border-radius: 0; }
+.post-row h3 a { background: linear-gradient(var(--accent), var(--accent)) 0 100% / 0 1px no-repeat; transition: background-size 0.4s var(--ease-out); }
+.post-row:hover h3 a { background-size: 100% 1px; }
+
+/* ---------- Article page ---------- */
+.read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.detail { padding-block: clamp(2.5rem, 6vw, 5rem) clamp(4rem, 8vw, 7rem); }
+.back-link { display: inline-block; margin-bottom: 2.25rem; font: 500 0.82rem var(--font-mono); color: var(--accent); }
+.back-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.article { max-width: 46rem; }
+.article h1 { font-size: var(--step-4); line-height: 1.02; letter-spacing: -0.025em; margin-block: 1rem 1.25rem; }
+.article__byline { font: 400 0.82rem var(--font-mono); color: var(--text-dim); }
+.article__intro {
+  margin-block: 2.25rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--accent-2);
+  font-size: var(--step-1);
+  line-height: 1.6;
+  color: var(--text);
+}
+.article p:not(.kicker):not(.article__byline):not(.article__intro) {
+  max-width: var(--measure);
+  margin-bottom: 1.4rem;
+  color: #c3c8f0;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .journal-hero { grid-template-columns: 1fr; }
+}

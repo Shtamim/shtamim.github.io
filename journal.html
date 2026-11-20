@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Journal — Shoyaib Hasan</title>
+  <meta name="description" content="Technical notes, build logs and lessons from Shoyaib Hasan.">
+  <meta name="author" content="Shoyaib Hasan">
+  <meta name="theme-color" content="#080a1a">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/journal.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/fx.js"></script>
+</head>
+
+<body data-theme="cool" data-page="journal" data-nav="journal" data-fx="stars">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <noscript><div class="wrap"><a class="brand" href="index.html"><span class="brand__mark">SH</span><span class="brand__name">Shoyaib Hasan</span></a></div></noscript>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="journal-hero wrap">
+      <div class="journal-hero__copy">
+        <p class="kicker reveal" style="--i:0">field journal</p>
+        <h1 class="reveal" style="--i:1">Document the process.</h1>
+        <p class="journal-hero__lead reveal" style="--i:2">
+          Short technical write-ups, build logs, experiments and lessons.
+          The thinking behind the finished work.
+        </p>
+      </div>
+
+      <!-- Synthwave scene: pure CSS + one SVG skyline -->
+      <div class="scene reveal" style="--i:2" aria-hidden="true">
+        <div class="scene__sun"></div>
+        <svg class="scene__skyline" viewBox="0 0 600 120" preserveAspectRatio="none">
+          <path d="M0 120V84l30-6 20-26 24 18 18-34 28 30 22-12 20-30 26 38 24-8 18 26 30-24 24 20 22-32 28 34 26-14 20-24 24 30 28-18 22 22 24-28 22 20 16-14V120Z"/>
+        </svg>
+        <div class="scene__floor"></div>
+      </div>
+    </section>
+
+    <!-- ================= POSTS ================= -->
+    <section class="section section--tight-top wrap">
+      <div class="journal-list" id="all-posts"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>

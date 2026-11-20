@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050a12"/><stop offset="1" stop-color="#0d2a3a"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b4a5c"/><stop offset="1" stop-color="#050a12"/></linearGradient>
+  </defs>
+  <rect width="900" height="506" fill="url(#sky)"/>
+  <g stroke="#22d3ee" stroke-opacity=".1"><path d="M0 60H900M0 120H900M0 180H900M150 0V506M300 0V506M450 0V506M600 0V506M750 0V506"/></g>
+  <rect y="330" width="900" height="176" fill="url(#sea)"/>
+  <g fill="none" stroke="#22d3ee" stroke-opacity=".5">
+    <path d="M0 360q50-14 100 0t100 0t100 0t100 0t100 0t100 0t100 0t100 0t100 0"/>
+    <path d="M0 410q50-14 100 0t100 0t100 0t100 0t100 0t100 0t100 0t100 0t100 0" stroke-opacity=".3"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0;-100 0" dur="4s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <path d="M200 300H700L630 365H275Z" fill="#ffb11f"/>
+    <path d="M330 300V222H520V300" fill="#0a1524" stroke="#22d3ee" stroke-width="3"/>
+    <path d="M425 222V130" stroke="#ffb11f" stroke-width="4"/>
+    <circle cx="425" cy="126" r="6" fill="#ff3d8b"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="3s" repeatCount="indefinite"/>
+  </g>
+  <g fill="none" stroke="#ff3d8b" stroke-width="2"><path d="M455 100a40 40 0 0 1 0-50" opacity=".9"/><path d="M475 112a64 64 0 0 1 0-74" opacity=".6"/><path d="M495 124a88 88 0 0 1 0-98" opacity=".3"/></g>
+  <g font-family="monospace" font-size="16" fill="#ffb11f"><text x="36" y="56">WIRELESS RC BOAT</text><text x="36" y="470" fill="#8fa6c4" font-size="13">NRF24L01 LINK · SERVO STEERING · DC PROPULSION</text></g>
+</svg>

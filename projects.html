@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Shoyaib Hasan</title>
+  <meta name="description" content="Robotics, embedded and software projects built by Shoyaib Hasan.">
+  <meta name="author" content="Shoyaib Hasan">
+  <meta name="theme-color" content="#050a12">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/projects.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/fx.js"></script>
+</head>
+
+<body data-theme="robotics" data-page="projects" data-nav="projects" data-fx="circuit">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <noscript><div class="wrap"><a class="brand" href="index.html"><span class="brand__mark">SH</span><span class="brand__name">Shoyaib Hasan</span></a></div></noscript>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="page-hero wrap">
+      <div class="page-hero__copy">
+        <p class="kicker reveal" style="--i:0">project archive</p>
+        <h1 class="reveal" style="--i:1">Ideas become working machines.</h1>
+        <p class="page-hero__lead reveal" style="--i:2">
+          Builds, experiments and technical explorations in robotics, embedded systems and software.
+          Some are finished, some are still evolving. All of them are part of the process.
+        </p>
+      </div>
+
+      <!-- Two-link robot arm, animated live by fx.js -->
+      <figure class="blueprint reveal" style="--i:2">
+        <svg id="arm" viewBox="0 0 520 380" role="img" aria-label="Animated blueprint of a two-joint robot arm moving through its range of motion">
+          <defs>
+            <pattern id="bp-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M20 0H0V20" fill="none" stroke="var(--accent-2)" stroke-opacity=".12"/>
+            </pattern>
+          </defs>
+          <rect width="520" height="380" fill="url(#bp-grid)"/>
+
+          <!-- corner crosshairs -->
+          <g stroke="var(--accent-2)" stroke-opacity=".6" stroke-width="1.5">
+            <path d="M14 30V14H30M490 14H506V30M14 350V366H30M490 366H506V350"/>
+          </g>
+
+          <!-- floor + base -->
+          <path d="M20 330H500" stroke="var(--accent-2)" stroke-opacity=".5"/>
+          <path d="M20 334h12M44 334h12M68 334h12M92 334h12M116 334h12M140 334h12M164 334h12M188 334h12M212 334h12M236 334h12M260 334h12M284 334h12M308 334h12M332 334h12M356 334h12M380 334h12M404 334h12M428 334h12M452 334h12M476 334h12" stroke="var(--accent-2)" stroke-opacity=".3"/>
+          <g fill="#0a1524" stroke="var(--accent-2)" stroke-width="1.5">
+            <rect x="130" y="318" width="140" height="12"/>
+            <rect x="172" y="292" width="56" height="26"/>
+          </g>
+
+          <!-- shoulder → upper arm → elbow → forearm → gripper (nested so joints inherit rotation) -->
+          <g id="arm-upper" fill="#0a1524" stroke="var(--accent)" stroke-width="2">
+            <rect x="188" y="190" width="24" height="100" rx="3"/>
+            <circle cx="200" cy="190" r="11" fill="var(--accent)" stroke="none"/>
+            <g id="arm-fore">
+              <circle cx="200" cy="190" r="120" fill="none" stroke="var(--accent-2)" stroke-opacity=".35" stroke-dasharray="3 6" stroke-width="1"/>
+              <rect x="200" y="178" width="120" height="24" rx="3"/>
+              <circle cx="320" cy="190" r="7" fill="var(--accent)" stroke="none"/>
+              <g fill="var(--accent)" stroke="none">
+                <rect id="grip-a" x="320" y="174" width="30" height="6"/>
+                <rect id="grip-b" x="320" y="200" width="30" height="6"/>
+              </g>
+            </g>
+          </g>
+          <circle cx="200" cy="290" r="13" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+          <circle cx="200" cy="290" r="4" fill="var(--accent)"/>
+
+          <!-- live joint read-out -->
+          <g font-family="IBM Plex Mono, monospace" font-size="12" fill="var(--text-dim)">
+            <text x="340" y="48">θ1 shoulder</text><text id="read-a1" x="440" y="48" fill="var(--accent)">+0.0°</text>
+            <text x="340" y="68">θ2 elbow</text><text id="read-a2" x="440" y="68" fill="var(--accent)">+0.0°</text>
+            <text x="340" y="88">gripper</text><text id="read-g" x="440" y="88" fill="var(--accent)">0.0 mm</text>
+          </g>
+          <text x="30" y="52" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--accent-2)">2-DOF ARM · SIMULATION</text>
+        </svg>
+        <figcaption>Joint angles update live as the arm moves through its range.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ================= ARCHIVE ================= -->
+    <section class="section section--tight-top wrap">
+      <div class="toolbar">
+        <div class="filters" id="project-filters" role="group" aria-label="Filter projects by category">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All work</button>
+          <button class="filter" type="button" data-filter="embedded" aria-pressed="false">Embedded</button>
+          <button class="filter" type="button" data-filter="robotics" aria-pressed="false">Robotics</button>
+          <button class="filter" type="button" data-filter="software" aria-pressed="false">Software</button>
+          <button class="filter" type="button" data-filter="security" aria-pressed="false">Cybersecurity</button>
+        </div>
+        <p class="toolbar__count" id="project-count" aria-live="polite"></p>
+      </div>
+      <div class="project-grid" id="all-projects"></div>
+    </section>
+
+    <!-- ================= LIVE GITHUB FEED ================= -->
+    <section class="section section--tight-top wrap">
+      <div class="section__head">
+        <div>
+          <p class="kicker">from github</p>
+          <h2 class="section__title">Latest repositories.</h2>
+        </div>
+        <p class="section__aside">Pulled live from my GitHub profile, so this list stays current without any edits.</p>
+      </div>
+      <div class="feed" id="github-feed"><p class="feed__note">Loading repositories…</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>
