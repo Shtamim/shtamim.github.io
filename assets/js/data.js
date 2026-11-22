@@ -20,7 +20,7 @@ window.PORTFOLIO = {
     role: "ICE student · builder · explorer",
     university: "Daffodil International University",
     location: "Bangladesh",
-    email: "tamim4960@example.com",
+    email: "tamim4960@gmail.com",
     github: "Shtamim",               // GitHub username (used for links + live repo feed)
     legacy: "TeamPirates 🔱",
   },
@@ -65,7 +65,7 @@ window.PORTFOLIO = {
       image: "assets/images/radar.svg",
       summary: "An Arduino Nano-based ultrasonic radar concept with servo scanning and a visual display.",
       description:
-        "StrikeScanX is an early-warning radar-style prototype built to explore distance sensing, servo control and real-time visualization. The project combines an ultrasonic sensor with an Arduino Nano and a scanning servo. A laptop visualization can be used to plot detected objects across the sweep.",
+        "StrikeScanX is an early-warning radar-style prototype built to explore distance sensing, servo control and real-time visualization. The project combines an ultrasonic sensor with an Arduino Nano, a servo-mounted scan head and a Processing-based display for a live distance map.",
       stack: ["Arduino Nano", "HC-SR04", "SG90 Servo", "Processing"],
       links: [{ label: "Source code", url: "https://github.com/Shtamim" }],
     },
@@ -78,7 +78,7 @@ window.PORTFOLIO = {
       image: "assets/images/boat.svg",
       summary: "A radio-controlled boat concept using microcontrollers, wireless communication and motor control.",
       description:
-        "A hands-on exploration of remote control systems, radio links, servo steering and DC motor propulsion. The design investigates a Nano-based transmitter and an ESP32 receiver with an NRF24L01 PA+LNA module.",
+        "A hands-on exploration of remote control systems, radio links, servo steering and DC motor propulsion. The design investigates a Nano-based transmitter and an ESP32 receiver with an NRF24L01 radio link.",
       stack: ["Arduino Nano", "ESP32", "NRF24L01", "Servo", "DC Motor"],
       links: [{ label: "Source code", url: "https://github.com/Shtamim" }],
     },
@@ -91,25 +91,23 @@ window.PORTFOLIO = {
       image: "assets/images/calculator.jpg",
       summary: "A static, HTML,CSS,JS powered calculator app with basic arithmetic functions and a clean interface.",
       description:
-        "This calculator app is intentionally built without a framework or backend. HTML, CSS and JavaScript are used to create a simple, responsive interface that performs basic arithmetic operations. The app is designed to be lightweight and easy to use, making it accessible on any device with a web browser.",
+        "This calculator app is intentionally built without a framework or backend. HTML, CSS and JavaScript are used to create a simple, responsive interface that performs basic arithmetic operations.",
       stack: ["HTML", "CSS", "JavaScript"],
       links: [{ label: "GitHub profile", url: "https://github.com/Shtamim" }],
     },
     {
-  id: "esp32-robotic-car",
-  title: "ESP32 WiFi-Controlled Robotic Car",
-  category: "robotics",
-  status: "Live build",
-  year: "2025",
-  image: "assets/images/robotic-car.png",
-  summary: "An ESP32-powered robotic car controlled wirelessly through a WiFi-based interface.",
-  description:
-    "A DIY robotic vehicle powered by the ESP32 microcontroller, featuring wireless WiFi control for real-time movement and navigation. The system uses a motor driver to control the DC motors, while the ESP32 handles wireless communication and movement commands. Designed as a compact robotics platform with potential for future upgrades such as obstacle avoidance, sensor integration, and autonomous navigation.",
-  stack: ["ESP32", "Arduino IDE", "C++", "WiFi", "L298N Motor Driver", "DC Motors"],
-  links: [
-    { label: "GitHub profile", url: "https://github.com/Shtamim" }
-  ],
-},
+      id: "esp32-robotic-car",
+      title: "ESP32 WiFi-Controlled Robotic Car",
+      category: "robotics",
+      status: "Live build",
+      year: "2025",
+      image: "assets/images/robotic-car.png",
+      summary: "An ESP32-powered robotic car controlled wirelessly through a WiFi-based interface.",
+      description:
+        "A DIY robotic vehicle powered by the ESP32 microcontroller, featuring wireless WiFi control for real-time movement and navigation. The system uses a motor driver to control the DC motors, while a simple web interface sends commands over the network.",
+      stack: ["ESP32", "Arduino IDE", "C++", "WiFi", "L298N Motor Driver", "DC Motors"],
+      links: [{ label: "GitHub profile", url: "https://github.com/Shtamim" }],
+    },
   ],
 
   /* ---------- Journal posts ----------
@@ -123,8 +121,8 @@ window.PORTFOLIO = {
       excerpt:
         "Why I’m turning this portfolio into a living record of projects, technical notes and things I learn along the way.",
       content: [
-        "A portfolio should be more than a static list of skills. I want this space to document the process: the prototypes that work, the ones that fail, the ideas that need another attempt, and the lessons in between.",
-        "The new version keeps the site lightweight and easy to maintain. It uses plain HTML, CSS and JavaScript, with project and journal content stored in one data file. GitHub Pages handles hosting, so there is no separate server or database to maintain.",
+        "A portfolio should be more than a static list of skills. I want this space to document the process: the prototypes that work, the ones that fail, the ideas that need another attempt, and the lessons collected along the way.",
+        "The new version keeps the site lightweight and easy to maintain. It uses plain HTML, CSS and JavaScript, with project and journal content stored in one data file. GitHub Pages handles hosting without a separate backend.",
         "Expect notes from cybersecurity labs, embedded builds, robotics experiments and software projects as the work develops.",
       ],
     },
